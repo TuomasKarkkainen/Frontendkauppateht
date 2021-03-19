@@ -30,7 +30,7 @@ function App() {
           alert(error)
         }
       )
-    },
+    }, [])
   
     function save(e) {
       e.preventDefault();
@@ -41,7 +41,7 @@ function App() {
         headers: {
           'Accept': 'application(json)',
           'Content-type':'application(json)',
-        },
+        }
         body: JSON.stringify({
           description: item,
           amount: amount
@@ -64,7 +64,7 @@ function App() {
             alert(error)
           }
       )
-    },
+    }
   
     function remove(id) {
       let status = 0;
@@ -94,13 +94,13 @@ function App() {
             alert(error)
           }
       )
-    },
+    }
   
     function setEditedItem(item) {
       setEditItem(item);
       setEditDescription(item?.description);
       setEditAmount(item?.amount);
-    },
+    }
   
     function update(e) {
       e.preventDefault();
@@ -137,7 +137,7 @@ function App() {
             alert(error)
           }
       )
-    }, [])
+    }
   
     return (
       <>
