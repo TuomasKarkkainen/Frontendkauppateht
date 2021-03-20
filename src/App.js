@@ -15,7 +15,7 @@ function App() {
       let status = 0;
       fetch(URL + 'index.php')
       
-      .then(response => {
+      .then(res => {
         status = parseInt(res.status);
         return res.json();
       })
@@ -30,7 +30,7 @@ function App() {
           alert(error)
         }
       )
-    },
+    }, [])
   
     function save(e) {
       e.preventDefault();
@@ -64,7 +64,7 @@ function App() {
             alert(error)
           }
       )
-    },
+    }
   
     function remove(id) {
       let status = 0;
@@ -94,13 +94,13 @@ function App() {
             alert(error)
           }
       )
-    },
+    }
   
     function setEditedItem(item) {
       setEditItem(item);
       setEditDescription(item?.description);
       setEditAmount(item?.amount);
-    },
+    }
   
     function update(e) {
       e.preventDefault();
@@ -137,7 +137,7 @@ function App() {
             alert(error)
           }
       )
-    }, [])
+    }
   
     return (
       <>
@@ -146,13 +146,13 @@ function App() {
           <form onSubmit={save}>
             <div>
               <label>New item</label>&nbsp;
-              <input value={item} onChange={e=> setItem(e.target.value)}></input>
+              <input placeholder="type description" value={item} onChange={e=> setItem(e.target.value)}></input>
+            &nbsp;
+              <input placeholder="type amount" value={amount} onChange={e=> setAmount(e.target.value)}></input>
+              
+              <button>Add</button>
             </div>
-            <div>
-              <label>Amount</label>&nbsp;
-              <input value={amount} onChange={e=> setAmount(e.target.value)}></input>
-            </div>
-            <button>Save</button>
+            
           </form>
           <ol>
             {items.map(item => (

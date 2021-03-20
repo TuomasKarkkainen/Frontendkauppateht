@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  color: rgba(115, 196, 196, 0.726);
+  background-color:dimgray;
+}
+
+button {
+  margin-left: 5px;
+  
+}
+
+label {
+  padding-left: 10px;
+}
+
+h3 {
+  padding-left: 10px;
+}
+
+ol {
+  padding-left: 28px;
+}
