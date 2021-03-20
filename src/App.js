@@ -41,7 +41,7 @@ function App() {
         headers: {
           'Accept': 'application(json)',
           'Content-type':'application(json)',
-        },
+        }
         body: JSON.stringify({
           description: item,
           amount: amount
